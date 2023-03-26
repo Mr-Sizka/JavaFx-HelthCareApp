@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="DashBoardContext" prefHeight="400.0" prefWidth="583.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.HelthCare.controller.DashBoardFormController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="583.0" pickOnBounds="true">
+         <image>
+            <Image url="@../assets/istockphoto-940993008-612x612.jpg" />
+         </image>
+      </ImageView>
+      <Separator layoutX="15.0" layoutY="72.0" prefHeight="3.0" prefWidth="553.0" />
+      <Label layoutX="98.0" layoutY="14.0" prefHeight="70.0" prefWidth="388.0" text="Hospital Management System" textFill="#1808c6">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+         <effect>
+            <Lighting bumpInput="$null">
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </Label>
+      <Button contentDisplay="TOP" layoutX="50.0" layoutY="100.0" mnemonicParsing="false" onAction="#openDoctorOnAction" prefHeight="100.0" prefWidth="120.0" text="Doctors">
+         <graphic>
+            <ImageView fitHeight="84.0" fitWidth="122.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../assets/young-handsome-physician-medical-robe-with-stethoscope.jpg" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="Consolas Bold" size="13.0" />
+         </font></Button>
+      <Button contentDisplay="TOP" layoutX="223.0" layoutY="100.0" mnemonicParsing="false" onAction="#openPatientsOnAction" prefHeight="100.0" prefWidth="120.0" text="Patients">
+         <graphic>
+            <ImageView fitHeight="84.0" fitWidth="122.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../assets/306154246_3496078860623134_217527885459327bn277_n.jpg" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="Consolas Bold" size="13.0" />
+         </font></Button>
+      <Button contentDisplay="TOP" layoutX="50.0" layoutY="233.0" mnemonicParsing="false" onAction="#openPaymentsOnAction" prefHeight="100.0" prefWidth="120.0" text="Payments">
+         <graphic>
+            <ImageView fitHeight="84.0" fitWidth="122.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../assets/alone-bills-cash-1435192.jpeg" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="Consolas Bold" size="13.0" />
+         </font></Button>
+      <Button contentDisplay="TOP" layoutX="223.0" layoutY="235.0" mnemonicParsing="false" onAction="#openDocumentsOnAction" prefHeight="100.0" prefWidth="120.0" text="Documents">
+         <graphic>
+            <ImageView fitHeight="84.0" fitWidth="122.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/storage.jpg" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Label layoutX="9.0" layoutY="368.0" prefHeight="31.0" prefWidth="108.0" text="Form : CMJD-97">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="481.0" layoutY="368.0" prefHeight="31.0" prefWidth="87.0" text="Version 1.0.0">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

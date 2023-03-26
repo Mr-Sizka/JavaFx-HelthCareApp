@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="DoctorFormContext" prefHeight="445.0" prefWidth="663.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.HelthCare.controller.DoctorFormContoller">
+   <children>
+      <ImageView fitHeight="445.0" fitWidth="663.0" pickOnBounds="true">
+         <image>
+            <Image url="@../assets/young-handsome-physician-medical-robe-with-stethoscope.jpg" />
+         </image>
+      </ImageView>
+      <JFXButton buttonType="RAISED" graphicTextGap="2.0" layoutX="7.0" layoutY="14.0" onAction="#btnBackOnAction" prefHeight="36.0" prefWidth="155.0" style="-fx-background-color: #2980b9;" text="Back to Home">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="33.0" fitWidth="24.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../assets/Back.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <padding>
+            <Insets left="5.0" />
+         </padding>
+      </JFXButton>
+      <Label layoutX="203.0" layoutY="14.0" prefHeight="36.0" prefWidth="223.0" text="Doctor Management" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <JFXButton buttonType="RAISED" layoutX="491.0" layoutY="20.0" onAction="#NewDoctorOnAction" prefHeight="25.0" prefWidth="93.0" style="-fx-background-color: #2980b9;" text="+ New Doc">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </JFXButton>
+      <Separator layoutX="171.0" layoutY="48.0" prefHeight="5.0" prefWidth="307.0" />
+      <JFXTextField fx:id="txtId" labelFloat="true" layoutX="19.0" layoutY="90.0" prefHeight="30.0" prefWidth="130.0" promptText="Doctoe Id">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="txtContact" labelFloat="true" layoutX="508.0" layoutY="90.0" prefHeight="30.0" prefWidth="130.0" promptText="Contact">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="txtAddress" labelFloat="true" layoutX="342.0" layoutY="90.0" prefHeight="30.0" prefWidth="130.0" promptText="Address">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="txtName" labelFloat="true" layoutX="179.0" layoutY="90.0" prefHeight="30.0" prefWidth="130.0" promptText="Name">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></JFXTextField>
+      <JFXButton fx:id="btnSave" buttonType="RAISED" layoutX="506.0" layoutY="149.0" onAction="#btnSaveOnAction" prefHeight="36.0" prefWidth="140.0" style="-fx-background-color: #2980b9;" text="Save Doctor">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect></JFXButton>
+      <TableView fx:id="tblDoctors" layoutX="19.0" layoutY="204.0" prefHeight="227.0" prefWidth="626.0">
+        <columns>
+          <TableColumn fx:id="colId" prefWidth="87.0" text="Id" />
+          <TableColumn fx:id="colName" prefWidth="111.0" text="Name" />
+            <TableColumn fx:id="colAddress" prefWidth="131.0" text="Address" />
+            <TableColumn fx:id="colContact" prefWidth="181.0" text="Contact" />
+            <TableColumn fx:id="colOption" prefWidth="114.0" text="Option" />
+        </columns>
+      </TableView>
+      <JFXTextField fx:id="txtSearch" labelFloat="true" layoutX="19.0" layoutY="155.0" prefHeight="25.0" prefWidth="479.0" promptText="Search Here">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></JFXTextField>
+   </children>
+</AnchorPane>
