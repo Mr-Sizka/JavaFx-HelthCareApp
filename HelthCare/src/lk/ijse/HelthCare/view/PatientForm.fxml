@@ -35,11 +35,6 @@
             <Font name="System Bold" size="22.0" />
          </font>
       </Label>
-      <JFXButton buttonType="RAISED" layoutX="501.0" layoutY="30.0" onAction="#btnNewOnAction" prefHeight="29.0" prefWidth="127.0" style="-fx-background-color: #2980b9;" text="+ New Patient">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </JFXButton>
       <Separator layoutX="199.0" layoutY="57.0" prefHeight="4.0" prefWidth="272.0" />
       <JFXTextField fx:id="txtId" labelFloat="true" layoutX="29.0" layoutY="102.0" prefHeight="30.0" prefWidth="130.0" promptText="Patient Id">
          <font>

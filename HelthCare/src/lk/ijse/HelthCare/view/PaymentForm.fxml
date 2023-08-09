@@ -1,14 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="lk.ijse.HelthCare.controller.PaymentFormContoller"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.HelthCare.controller.PaymentFormContoller">
+   <children>
+      <ImageView cache="true" fitHeight="428.0" fitWidth="656.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true">
+         <image>
+            <Image url="@../assets/alone-bills-cash-1435192.jpeg" />
+         </image>
+      </ImageView>
+      <Pane layoutX="10.0" layoutY="9.0" opacity="0.27" prefHeight="203.0" prefWidth="656.0" style="-fx-background-color: #FFFFFF;" />
+      <JFXButton buttonType="RAISED" cache="true" layoutX="27.0" layoutY="34.0" onAction="#btnBackOnAction" prefHeight="36.0" prefWidth="170.0" style="-fx-background-color: #2980b9;" text="Back to Home">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="28.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/Back.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <Label layoutX="262.0" layoutY="35.0" prefHeight="36.0" prefWidth="229.0" text="Paymet Management">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <Separator layoutX="209.0" layoutY="67.0" prefHeight="4.0" prefWidth="272.0" />
+      <JFXTextField fx:id="txtId" focusColor="BLACK" labelFloat="true" layoutX="39.0" layoutY="112.0" prefHeight="30.0" prefWidth="130.0" promptText="Patient Id" unFocusColor="BLACK">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtContact" focusColor="BLACK" labelFloat="true" layoutX="526.0" layoutY="112.0" prefHeight="30.0" prefWidth="130.0" promptText="Contact">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtAddress" focusColor="BLACK" labelFloat="true" layoutX="358.0" layoutY="112.0" prefHeight="30.0" prefWidth="130.0" promptText="Address" unFocusColor="BLACK">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtName" focusColor="BLACK" labelFloat="true" layoutX="197.0" layoutY="112.0" prefHeight="30.0" prefWidth="130.0" promptText="Amount" unFocusColor="BLACK">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton fx:id="btnSave" buttonType="RAISED" layoutX="521.0" layoutY="169.0" onAction="#btnSaveOnAction" prefHeight="36.0" prefWidth="140.0" style="-fx-background-color: #2980b9;" text="Make Payment">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <TableView fx:id="tblPatient" layoutX="25.0" layoutY="212.0" prefHeight="221.0" prefWidth="626.0">
+         <columns>
+            <TableColumn fx:id="colId" prefWidth="87.0" text="Id" />
+            <TableColumn fx:id="colName" prefWidth="111.0" text="Name" />
+            <TableColumn fx:id="colAddress" prefWidth="131.0" text="Address" />
+            <TableColumn fx:id="colContact" prefWidth="181.0" text="Contact" />
+            <TableColumn fx:id="colOption" prefWidth="114.0" text="Option" />
+         </columns>
+      </TableView>
+      <JFXTextField fx:id="txtSearch" focusColor="BLACK" labelFloat="true" layoutX="39.0" layoutY="175.0" prefHeight="25.0" prefWidth="461.0" promptText="Search Here" unFocusColor="BLACK">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXTextField>
+   </children>
 </AnchorPane>

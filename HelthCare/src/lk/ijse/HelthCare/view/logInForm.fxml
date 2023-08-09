@@ -10,7 +10,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane fx:id="loginFormContext" prefHeight="415.0" prefWidth="592.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.HelthCare.controller.LogInFormContoller">
    <children>
       <Label layoutX="25.0" layoutY="26.0" prefHeight="37.0" prefWidth="68.0" text="Login">
@@ -18,12 +17,12 @@
             <Font name="System Bold" size="19.0" />
          </font>
       </Label>
-      <JFXTextField labelFloat="true" layoutX="24.0" layoutY="81.0" promptText="Email">
+      <JFXTextField fx:id="txtEmail" labelFloat="true" layoutX="24.0" layoutY="81.0" promptText="Email">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </JFXTextField>
-      <JFXPasswordField labelFloat="true" layoutX="25.0" layoutY="142.0" prefHeight="37.0" prefWidth="181.0" promptText="Password">
+      <JFXPasswordField fx:id="txtPassword" labelFloat="true" layoutX="25.0" layoutY="142.0" prefHeight="37.0" prefWidth="181.0" promptText="Password">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>

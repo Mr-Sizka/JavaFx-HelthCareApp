@@ -6,10 +6,10 @@ import java.sql.SQLException;
 
 public class DBConnection {
     private static DBConnection dBConnection;
-    private Connection connection;
+    private final Connection connection;
     private DBConnection() throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.cj.jdbc.Driver");
-        connection= DriverManager.getConnection("jdbc:mysql://localhost:3306/HealthCare", "root", "1234");
+        connection= DriverManager.getConnection("jdbc:mysql://localhost:3306/HealthCare?useSSL=false", "root", "1234");
     }
     public Connection getConnection(){
         return connection;

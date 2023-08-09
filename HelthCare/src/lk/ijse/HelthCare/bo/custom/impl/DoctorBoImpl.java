@@ -3,6 +3,7 @@ package lk.ijse.HelthCare.bo.custom.impl;
 import lk.ijse.HelthCare.bo.custom.DoctorBo;
 import lk.ijse.HelthCare.dao.DaoFactory;
 import lk.ijse.HelthCare.dao.custom.DoctorDao;
+import lk.ijse.HelthCare.dao.custom.PatientDao;
 import lk.ijse.HelthCare.dto.DoctorDto;
 import lk.ijse.HelthCare.entity.Doctor;
 

@@ -17,27 +17,27 @@
             <Font name="System Bold" size="22.0" />
          </font>
       </Label>
-      <JFXTextField layoutX="27.0" layoutY="75.0" prefHeight="31.0" prefWidth="162.0" promptText="User Name">
+      <JFXTextField fx:id="textEmail" layoutX="27.0" layoutY="75.0" prefHeight="31.0" prefWidth="162.0" promptText="Email">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </JFXTextField>
-      <JFXTextField layoutX="27.0" layoutY="137.0" prefHeight="31.0" prefWidth="162.0" promptText="Full Name">
+      <JFXTextField fx:id="txtName" layoutX="27.0" layoutY="137.0" prefHeight="31.0" prefWidth="162.0" promptText="Full Name">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </JFXTextField>
-      <JFXTextField layoutX="25.0" layoutY="197.0" prefHeight="31.0" prefWidth="162.0" promptText="Contact Number">
+      <JFXTextField fx:id="txtContact" layoutX="25.0" layoutY="197.0" prefHeight="31.0" prefWidth="162.0" promptText="Contact Number">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </JFXTextField>
-      <JFXPasswordField layoutX="27.0" layoutY="264.0" prefHeight="31.0" prefWidth="162.0" promptText="Password">
+      <JFXPasswordField fx:id="txtPassword" layoutX="27.0" layoutY="264.0" prefHeight="31.0" prefWidth="162.0" promptText="Password">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </JFXPasswordField>
-      <JFXPasswordField layoutX="27.0" layoutY="323.0" promptText="Confirm Password">
+      <JFXPasswordField fx:id="txtConfirm" layoutX="27.0" layoutY="323.0" promptText="Confirm Password">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
