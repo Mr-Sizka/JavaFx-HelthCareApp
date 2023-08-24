@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class PatientDaoImpl implements PatientDao {
     @Override
     public boolean save(Patient p) throws SQLException, ClassNotFoundException {
-        return CrudUtil.execute("INSERT INTO patient VALUES(?,?,?,?)",p.getpId(),p.getName(),p.getAddress(),p.getContact());
+        return CrudUtil.execute("INSERT INTO patient VALUES(?,?,?,?)",p.getPId(),p.getName(),p.getAddress(),p.getContact());
     }
 
     @Override
@@ -36,7 +36,7 @@ public class PatientDaoImpl implements PatientDao {
 
     @Override
     public boolean update(Patient dto) throws SQLException, ClassNotFoundException {
-        return CrudUtil.execute("UPDATE patient SET Name=?,Address=?,Contact=? WHERE pId=?",dto.getName(),dto.getAddress(),dto.getContact(),dto.getpId());
+        return CrudUtil.execute("UPDATE patient SET Name=?,Address=?,Contact=? WHERE pId=?",dto.getName(),dto.getAddress(),dto.getContact(),dto.getPId());
     }
 
     @Override

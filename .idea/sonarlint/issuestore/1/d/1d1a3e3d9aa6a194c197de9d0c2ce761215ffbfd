@@ -1,0 +1,15 @@
+
+w
+java:S1104"\Make DashBoardContext a static final constant or non-public and provide accessors if needed.(÷Ä­áÿÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(áåû²ùÿÿÿÿ
+u	java:S116"[Rename this field "DashBoardContext" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷Ä­áÿÿÿÿÿ
+–
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(£Ø’\
+M
+java:S1172"2Remove this unused method parameter "actionEvent".(ŒèÓÇùÿÿÿÿ
+M
+java:S1172"2Remove this unused method parameter "actionEvent".(Äûî ùÿÿÿÿ
+M
+java:S1172"2Remove this unused method parameter "actionEvent".(ßüäóøÿÿÿÿ
+K
+java:S1128"0Remove this unused import 'javafx.stage.Window'.(Ñ€Þ‡øÿÿÿÿ

@@ -20,7 +20,7 @@ public class DashBoardFormController {
         setUI("PatientForm");
     }
 
-    public void openPaymentsOnAction(ActionEvent actionEvent) throws IOException {
+    public void openBillOnAction(ActionEvent actionEvent) throws IOException {
         setUI("PaymentForm");
     }
 
@@ -31,4 +31,6 @@ public class DashBoardFormController {
         Stage stage = (Stage) DashBoardContext.getScene().getWindow();
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/"+location+".fxml"))));
     }
+
+
 }

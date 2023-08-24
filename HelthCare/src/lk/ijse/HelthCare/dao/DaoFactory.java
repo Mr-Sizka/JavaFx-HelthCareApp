@@ -1,5 +1,6 @@
 package lk.ijse.HelthCare.dao;
 
+import lk.ijse.HelthCare.dao.custom.impl.BillDaoImpl;
 import lk.ijse.HelthCare.dao.custom.impl.DoctorDaoImpl;
 import lk.ijse.HelthCare.dao.custom.impl.PatientDaoImpl;
 import lk.ijse.HelthCare.dao.custom.impl.UserDaoImpl;
@@ -14,7 +15,7 @@ public class DaoFactory {
     }
 
     public enum DaoType{
-        PATIENT, USER, DOCTOR
+        PATIENT, USER, DOCTOR,BILL
     }
 
     public <T> T getDao(DaoType type){
@@ -22,6 +23,7 @@ public class DaoFactory {
             case DOCTOR: return (T) new DoctorDaoImpl();
             case PATIENT: return (T) new PatientDaoImpl();
             case USER: return (T) new UserDaoImpl();
+            case BILL: return (T) new BillDaoImpl();
             default:return null;
         }
     }

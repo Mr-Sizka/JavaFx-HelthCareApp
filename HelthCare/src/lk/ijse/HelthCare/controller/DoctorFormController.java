@@ -4,7 +4,6 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -13,8 +12,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.ijse.HelthCare.bo.BoFactory;
 import lk.ijse.HelthCare.bo.custom.DoctorBo;
-import lk.ijse.HelthCare.dao.custom.DoctorDao;
-import lk.ijse.HelthCare.dao.custom.impl.DoctorDaoImpl;
+import lk.ijse.HelthCare.common.TxtValidator;
 import lk.ijse.HelthCare.dto.DoctorDto;
 import lk.ijse.HelthCare.view.tm.DoctorTm;
 
@@ -22,7 +20,7 @@ import lk.ijse.HelthCare.view.tm.DoctorTm;
 import java.io.IOException;
 import java.util.Optional;
 
-public class DoctorFormContoller {
+public class DoctorFormController {
     public AnchorPane DoctorFormContext;
     public JFXTextField txtId=null;
     public JFXTextField txtContact=null;
@@ -37,9 +35,11 @@ public class DoctorFormContoller {
     public JFXTextField txtSearch;
     public JFXButton btnSave;
 
+    private final String tryAgainText = "Try Again ...!";
+
     private String sText="";
 
-    private DoctorBo bo= BoFactory.getInstance().getBo(BoFactory.BoType.DOCTOR);
+    private final DoctorBo bo= BoFactory.getInstance().getBo(BoFactory.BoType.DOCTOR);
 
     public void initialize(){
         clear();
@@ -72,11 +72,11 @@ public class DoctorFormContoller {
 
 
     private void searchDoctors(String text) {
-        ObservableList<DoctorTm> TmList= FXCollections.observableArrayList();
+        ObservableList<DoctorTm> tmList= FXCollections.observableArrayList();
         try {
             for (DoctorDto dto : bo.search(text)) {
                 Button btn = new Button("Delete");
-                TmList.add(new DoctorTm(dto.getdId(),dto.getName(),dto.getAddress(),dto.getContact(),btn));
+                tmList.add(new DoctorTm(dto.getDId(),dto.getName(),dto.getAddress(),dto.getContact(),btn));
 
                 btn.setOnAction(event -> {
                     Alert alert=new Alert(
@@ -87,22 +87,23 @@ public class DoctorFormContoller {
                     );
                     Optional<ButtonType> buttonType = alert.showAndWait();
                     try {
-                        if (buttonType.get() == ButtonType.YES) {
-                            bo.deleteDoctor(dto.getdId());
-                            searchDoctors(text);
+                        if (buttonType.isPresent() && (buttonType.get() == ButtonType.YES)) {
+                                bo.deleteDoctor(dto.getDId());
+                                searchDoctors(text);
+
                         }
                     }catch (Exception e){
-                        new Alert(Alert.AlertType.ERROR,"Try Againg").show();
+                        new Alert(Alert.AlertType.ERROR,tryAgainText).show();
                     }
                 });
             }
         }catch (Exception e) {
             e.printStackTrace();
         }
-        tblDoctors.setItems(TmList);
+        tblDoctors.setItems(tmList);
     }
 
-    public void btnBackOnAction(ActionEvent actionEvent) throws IOException {
+    public void btnBackOnAction() throws IOException {
         setUI("DashBoardForm");
     }
     private void setUI(String location) throws IOException {
@@ -110,47 +111,49 @@ public class DoctorFormContoller {
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/"+location+".fxml"))));
     }
 
-    public void NewDoctorOnAction(ActionEvent actionEvent) {
 
-    }
-
-    public void btnSaveOnAction(ActionEvent actionEvent) {
-        if(txtId.getText()==null||txtName.getText()==null||txtAddress.getText()==null||txtContact.getText()==null) {
-            new Alert(Alert.AlertType.ERROR, "Please Enter All Information").show();
-        }else{
+    public void btnSaveOnAction() {
+        if (new TxtValidator().validateFields(txtId,txtName,txtAddress,txtContact)) {
             DoctorDto dto = new DoctorDto(txtId.getText(), txtName.getText(), txtAddress.getText(), txtContact.getText());
             if (btnSave.getText().equals("Save Doctor")) {
-                try {
-                    boolean isSaved = bo.saveDoctor(dto);
-                    if (isSaved) {
-                        new Alert(Alert.AlertType.CONFIRMATION, "Doctor Saved!").show();
-                        clear();
-                    } else {
-                        new Alert(Alert.AlertType.WARNING, "Try Again").show();
-                    }
-                } catch (Exception e) {
-                    new Alert(Alert.AlertType.ERROR, "Try Again").show();
-                }
+                saveDoctor(dto);
             } else {
-                try {
-                    boolean isSaved = bo.updateDoctor(dto);
-                    if (isSaved) {
-                        new Alert(Alert.AlertType.CONFIRMATION, "Doctor Updated!").show();
-                        clear();
-                        btnSave.setText("Save Doctor");
-                    } else {
-                        new Alert(Alert.AlertType.WARNING, "Try Again").show();
-                    }
-                } catch (Exception e) {
-                    new Alert(Alert.AlertType.ERROR, "Try Again").show();
-                }
-
+                updateDoctor(dto);
             }
-
+        } else {
+            new Alert(Alert.AlertType.ERROR, "Please Enter All Information").show();
         }
         searchDoctors(sText);
     }
 
+    private void saveDoctor(DoctorDto dto){
+        try {
+            boolean isSaved = bo.saveDoctor(dto);
+            if (isSaved) {
+                new Alert(Alert.AlertType.CONFIRMATION, "Doctor Saved!").show();
+                clear();
+            } else {
+                new Alert(Alert.AlertType.WARNING, tryAgainText).show();
+            }
+        } catch (Exception e) {
+            new Alert(Alert.AlertType.ERROR, tryAgainText).show();
+        }
+    }
+
+    private void updateDoctor(DoctorDto dto){
+        try {
+            boolean isSaved = bo.updateDoctor(dto);
+            if (isSaved) {
+                new Alert(Alert.AlertType.CONFIRMATION, "Doctor Updated!").show();
+                clear();
+                btnSave.setText("Save Doctor");
+            } else {
+                new Alert(Alert.AlertType.WARNING, tryAgainText).show();
+            }
+        } catch (Exception e) {
+            new Alert(Alert.AlertType.ERROR, tryAgainText).show();
+        }
+    }
     private void clear(){
         txtId.setText(null);
         txtName.setText(null);

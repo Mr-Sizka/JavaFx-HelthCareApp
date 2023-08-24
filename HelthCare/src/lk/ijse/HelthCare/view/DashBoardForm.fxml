@@ -52,7 +52,7 @@
          <font>
             <Font name="Consolas Bold" size="13.0" />
          </font></Button>
-      <Button contentDisplay="TOP" layoutX="50.0" layoutY="233.0" mnemonicParsing="false" onAction="#openPaymentsOnAction" prefHeight="100.0" prefWidth="120.0" text="Payments">
+      <Button contentDisplay="TOP" layoutX="50.0" layoutY="233.0" mnemonicParsing="false" onAction="#openBillOnAction" prefHeight="100.0" prefWidth="120.0" text="Bill">
          <graphic>
             <ImageView fitHeight="84.0" fitWidth="122.0" pickOnBounds="true">
                <image>
@@ -63,15 +63,18 @@
          <font>
             <Font name="Consolas Bold" size="13.0" />
          </font></Button>
-      <Button contentDisplay="TOP" layoutX="223.0" layoutY="235.0" mnemonicParsing="false" onAction="#openDocumentsOnAction" prefHeight="100.0" prefWidth="120.0" text="Documents">
+      <Button contentDisplay="TOP" layoutX="223.0" layoutY="235.0" mnemonicParsing="false" onAction="#openDocumentsOnAction" prefHeight="113.0" prefWidth="140.0" text="Profile">
          <graphic>
-            <ImageView fitHeight="84.0" fitWidth="122.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView blendMode="RED" fitHeight="84.0" fitWidth="122.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../assets/storage.jpg" />
+                  <Image url="@../assets/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png" />
                </image>
             </ImageView>
-         </graphic></Button>
-      <Label layoutX="9.0" layoutY="368.0" prefHeight="31.0" prefWidth="108.0" text="Form : CMJD-97">
+         </graphic>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Label layoutX="9.0" layoutY="368.0" prefHeight="31.0" prefWidth="108.0" text="Form : Mr-Sizka">
          <font>
             <Font name="System Bold Italic" size="13.0" />
          </font>

@@ -10,5 +10,9 @@
     <orderEntry type="library" name="lib" level="project" />
     <orderEntry type="library" name="jfoenix-8.0.71" level="project" />
     <orderEntry type="library" name="mysql-connector-java-8.0.11" level="project" />
+    <orderEntry type="library" name="lombok (1)" level="project" />
+  </component>
+  <component name="SonarLintModuleSettings">
+    <option name="uniqueId" value="dd97581a-54ab-4b42-b821-fa96d2a1e278" />
   </component>
 </module>

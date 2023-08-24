@@ -88,7 +88,7 @@ public class PatientFormContoller {
         try {
             for (PatientDto dto : bo.search(Text)) {
                 Button btn = new Button("Delete");
-                TmList.add(new PatientTm(dto.getpId(), dto.getName(), dto.getAddress(), dto.getContact(), btn));
+                TmList.add(new PatientTm(dto.getPId(), dto.getName(), dto.getAddress(), dto.getContact(), btn));
 
                 btn.setOnAction(event -> {
                     Alert alert = new Alert(
@@ -100,7 +100,7 @@ public class PatientFormContoller {
                     Optional<ButtonType> buttonType = alert.showAndWait();
                     try {
                         if (buttonType.get() == ButtonType.YES) {
-                            bo.deletePatient(dto.getpId());
+                            bo.deletePatient(dto.getPId());
                             searchPatient(Text);
                         }
                     } catch (Exception e) {

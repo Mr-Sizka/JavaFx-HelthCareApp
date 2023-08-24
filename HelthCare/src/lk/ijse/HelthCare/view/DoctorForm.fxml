@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="DoctorFormContext" prefHeight="445.0" prefWidth="663.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.HelthCare.controller.DoctorFormContoller">
+<AnchorPane fx:id="DoctorFormContext" prefHeight="445.0" prefWidth="663.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.HelthCare.controller.DoctorFormController">
    <children>
       <ImageView fitHeight="445.0" fitWidth="663.0" pickOnBounds="true">
          <image>
@@ -40,14 +40,6 @@
             <Font name="System Bold" size="22.0" />
          </font>
       </Label>
-      <JFXButton buttonType="RAISED" layoutX="491.0" layoutY="20.0" onAction="#NewDoctorOnAction" prefHeight="25.0" prefWidth="93.0" style="-fx-background-color: #2980b9;" text="+ New Doc">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-         <effect>
-            <Glow />
-         </effect>
-      </JFXButton>
       <Separator layoutX="171.0" layoutY="48.0" prefHeight="5.0" prefWidth="307.0" />
       <JFXTextField fx:id="txtId" labelFloat="true" layoutX="19.0" layoutY="90.0" prefHeight="30.0" prefWidth="130.0" promptText="Doctoe Id">
          <font>

@@ -16,14 +16,14 @@ public class PatientBoImpl implements PatientBo {
     PatientDao dao = DaoFactory.getInstance().getDao(DaoFactory.DaoType.PATIENT);
     @Override
     public boolean savePatient(PatientDto dto) throws SQLException, ClassNotFoundException {
-        return dao.save(new Patient(dto.getpId(),dto.getName(),dto.getAddress(),dto.getContact()));
+        return dao.save(new Patient(dto.getPId(),dto.getName(),dto.getAddress(),dto.getContact()));
     }
 
     @Override
     public ArrayList<PatientDto> getAllPatients() throws SQLException, ClassNotFoundException {
         ArrayList<PatientDto> dto= new ArrayList<>();
         for (Patient p: dao.getAll()) {
-            dto.add(new PatientDto(p.getpId(), p.getName(), p.getAddress(), p.getContact()));
+            dto.add(new PatientDto(p.getPId(), p.getName(), p.getAddress(), p.getContact()));
         }
         return dto;
     }
@@ -35,7 +35,7 @@ public class PatientBoImpl implements PatientBo {
 
     @Override
     public boolean updatePatient(PatientDto dto) throws SQLException, ClassNotFoundException {
-        return dao.update(new Patient(dto.getpId(), dto.getName(), dto.getAddress(), dto.getContact()));
+        return dao.update(new Patient(dto.getPId(), dto.getName(), dto.getAddress(), dto.getContact()));
     }
 
     @Override
@@ -47,7 +47,7 @@ public class PatientBoImpl implements PatientBo {
     public ArrayList<PatientDto> search(String text) throws SQLException, ClassNotFoundException {
         ArrayList<PatientDto> patients=new ArrayList<>();
         for (Patient p:dao.search(text)) {
-            patients.add(new PatientDto(p.getpId(),p.getName(),p.getAddress(),p.getContact()));
+            patients.add(new PatientDto(p.getPId(),p.getName(),p.getAddress(),p.getContact()));
         }
         return patients;
     }

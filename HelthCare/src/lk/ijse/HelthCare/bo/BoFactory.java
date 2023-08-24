@@ -1,5 +1,6 @@
 package lk.ijse.HelthCare.bo;
 
+import lk.ijse.HelthCare.bo.custom.impl.BillBoImpl;
 import lk.ijse.HelthCare.bo.custom.impl.DoctorBoImpl;
 import lk.ijse.HelthCare.bo.custom.impl.PatientBoImpl;
 import lk.ijse.HelthCare.bo.custom.impl.UserBoImpl;
@@ -16,7 +17,7 @@ public class BoFactory {
     }
 
     public enum BoType{
-        PATIENT,DOCTOR,USER
+        PATIENT,DOCTOR,USER,BILL
     }
 
     public <T> T getBo(BoType type){
@@ -24,6 +25,7 @@ public class BoFactory {
             case DOCTOR: return (T) new DoctorBoImpl();
             case PATIENT: return (T) new PatientBoImpl();
             case USER: return (T) new UserBoImpl();
+            case BILL:return (T) new BillBoImpl();
             default:return null;
         }
     }
